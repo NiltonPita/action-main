@@ -14,11 +14,11 @@ jobs:
         name: Execução de Custom Action
         steps: 
             - name: Adicionando Comentário
-              uses: niltonppita/action-js@main
+              uses: niltonppita/action-composite@main
               with:
                 GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
                 issue-id: ${{ github.event.issue.number }}
-                comment: "Teste de comentário"
+                comment: "Teste de comentário Composite"
             - name: Mostrar o ID do comentário
              run: |
                echo 'ID do comentário é: ${{ steps.commnet_stop.outputs.comment-id }}'
