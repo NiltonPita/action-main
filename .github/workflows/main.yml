@@ -11,14 +11,15 @@ jobs:
             issues: write
             pull-requests: write
         runs-on: ubuntu-latest
-        name: Execução de Custom Action
+        name: Execução de Custom Action ( Docker )
         steps: 
-            - name: Adicionando Comentário
-              uses: niltonppita/action-composite@main
+            - name: Adicionando Comentário 
+              uses: niltonppita/action-docker@main
               with:
                 GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
                 issue-id: ${{ github.event.issue.number }}
-                comment: "Teste de comentário Composite"
+                comment: "Teste de comentário Docker"
+                GITHUB_REPOSITORY: ${{ github.repository }}
             - name: Mostrar o ID do comentário
              run: |
                echo 'ID do comentário é: ${{ steps.commnet_stop.outputs.comment-id }}'
